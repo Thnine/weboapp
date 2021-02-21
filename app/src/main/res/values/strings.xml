@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">weboapp</string>
+    <string name="fowarding">转发</string>
+    <string name="comment">评论</string>
+    <string name="like">点赞</string>
+    <string name="login_failed">登录失败</string>
+    <string name="register_mulUser_failed">用户名已经被占用</string>
+    <string name="add_post_success">发帖成功</string>
+    <string name="add_post_failed">发帖失败</string>
+    <string name="add_comment_success">评论成功</string>
+    <string name="add_comment_failed">评论失败</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

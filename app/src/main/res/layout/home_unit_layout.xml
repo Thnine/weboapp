@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--微博首页单元视图-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/White">
+
+        <!-- 微博首页单元 帖子作者信息标签-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <com.example.weboapp.Controls.RoundImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:scaleType="fitCenter"
+                android:id="@+id/home_user_icon"
+                android:src="@drawable/anoymous"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/home_user_name"
+                    android:textColor="@color/Black"
+                    android:text="NoName"
+                    android:padding="3dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top"
+                    android:text="NoDate"
+                    android:id="@+id/home_date"
+                    android:padding="3dp">
+                </TextView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+        <!-- 微博首页单元 帖子主文本标签-->
+        <TextView android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/home_post_body"
+            android:padding="15dp"
+            android:textColor="@color/Black"
+            android:text="Error!"
+            />
+        <!--分割线-->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGray"
+            android:layout_marginBottom="3dp"/>
+
+
+        <!--图片框架-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_unit_image_re"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="-106dp"
+                tools:layout_editor_absoluteY="0dp" />
+            
+        </LinearLayout>
+
+        <!--转发fragment-->
+
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="6dp"
+            tools:context=".Fragments.subFragments.TransportInfoUnitFragment">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/home_transport_layout"
+                android:background="@color/DarkGray">
+
+                <!-- 微博首页单元 帖子作者信息标签-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <com.example.weboapp.Controls.RoundImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:scaleType="fitCenter"
+                        android:background="@color/White"
+                        android:id="@+id/transport_user_icon"
+                        android:src="@drawable/anoymous"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/transport_user_name"
+                            android:textColor="@color/White"
+                            android:text="NoName"
+                            android:padding="3dp"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="top"
+                            android:text="NoDate"
+                            android:textColor="@color/White"
+                            android:id="@+id/transport_date"
+                            android:padding="3dp">
+                        </TextView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+
+                <!-- 微博首页单元 帖子主文本标签-->
+                <TextView android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:id="@+id/transport_post_body"
+                    android:padding="15dp"
+                    android:textColor="@color/White"
+                    android:text="Error!"
+                    />
+                <!--分割线-->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightGray"
+                    android:layout_marginBottom="3dp"/>
+
+
+                <!--图片框架-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/transport_unit_image_re"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:layout_editor_absoluteX="-106dp"
+                        tools:layout_editor_absoluteY="0dp" />
+
+                </LinearLayout>
+                <!--分割线-->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightGray"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <!--分割线-->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGray"/>
+        
+        <!-- 按钮布局-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--转发按钮-->
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:drawableLeft="@drawable/ic_transport"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp"
+                android:id="@+id/home_unit_transport_buttion"
+                android:text="0"
+                android:background="@color/White"></Button>
+            <!--评论按钮-->
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:paddingRight="35dp"
+                android:paddingLeft="35dp"
+                android:drawableLeft="@drawable/ic_comment"
+                android:id="@+id/home_unit_comment_button"
+                android:text="0"
+                android:background="@color/White"></Button>
+            <!--点赞按钮-->
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:drawableLeft="@drawable/ic_good"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp"
+                android:id="@+id/home_unit_good_unit"
+                android:text="0"
+                android:background="@color/White"></Button>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
