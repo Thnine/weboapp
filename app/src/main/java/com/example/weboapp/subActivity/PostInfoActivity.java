@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ import com.example.weboapp.Entity.CommentRecord;
 import com.example.weboapp.Entity.PostRecord;
 import com.example.weboapp.Entity.img_entity;
 import com.example.weboapp.R;
+import com.example.weboapp.utils.IconLoader;
 
 import org.apache.hc.client5.http.classic.methods.HttpPost;
 import org.apache.hc.client5.http.entity.UrlEncodedFormEntity;
@@ -100,6 +102,9 @@ public class PostInfoActivity extends AppCompatActivity {
         PostInfoBody.setText(mypost.getBody());
         Timestamp thisdate = mypost.getDate();
         PostInfoDate.setText(thisdate.toString().replaceAll("\\.0",""));
+        IconLoader IL1 = new IconLoader(PostInfoActivity.this);
+        IL1.OnBindInfo(PostInfoIcon,mypost.getUser());
+        IL1.setIcon();
 
         //转发控件初始化
         this.transportIcon = (RoundImageView)findViewById(R.id.transport_user_icon);
@@ -116,6 +121,9 @@ public class PostInfoActivity extends AppCompatActivity {
             Timestamp thisdate1 = transportPost.getDate();
             this.transportDate.setText(thisdate1.toString().replaceAll("\\.0",""));
             this.transportBody.setText(transportPost.getBody());
+            IconLoader IL2 = new IconLoader(PostInfoActivity.this);
+            IL2.OnBindInfo(this.transportIcon,transportPost.getUser());
+            IL2.setIcon();
             //配置转发RV
             LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(PostInfoActivity.this);
             linearLayoutManager1.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -316,6 +324,9 @@ public class PostInfoActivity extends AppCompatActivity {
             mBodyTextView.setText(mycomment.getContent());
             Timestamp thisdate = mycomment.getDate();
             mDateTextView.setText(thisdate.toString().replaceAll("\\.0",""));
+            IconLoader IL = new IconLoader(PostInfoActivity.this);
+            IL.OnBindInfo(this.mCommentUserIcon,mycomment.getUsername());
+            IL.setIcon();
         }
 
     }

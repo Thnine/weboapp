@@ -63,7 +63,9 @@ public class MainActivity extends AppCompatActivity {
 
         for(int i = 0;i < 3;i++){
             TabHost.TabSpec tabSpec = tabhost.newTabSpec(i+"").setIndicator(getIndicatorView(i));
-            tabhost.addTab(tabSpec,fragmentList.get(i),null);
+            Bundle bundle = new Bundle();
+            bundle.putString("username",username);
+            tabhost.addTab(tabSpec,fragmentList.get(i),bundle);
         }
 
         tabhost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {

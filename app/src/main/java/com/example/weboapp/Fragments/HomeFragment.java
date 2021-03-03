@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.Icon;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,6 +34,7 @@ import com.example.weboapp.subActivity.AddPicActivity;
 import com.example.weboapp.subActivity.AddTextActivity;
 import com.example.weboapp.subActivity.PostInfoActivity;
 import com.example.weboapp.subActivity.TransportActivity;
+import com.example.weboapp.utils.IconLoader;
 
 import org.apache.hc.client5.http.classic.methods.HttpPost;
 import org.apache.hc.client5.http.entity.UrlEncodedFormEntity;
@@ -411,6 +413,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Popu
             mTitleUsername.setText(mypost.getUser());
             mBodyTextView.setText(mypost.getBody());
             Timestamp thisdate = mypost.getDate();
+            IconLoader IL1 = new IconLoader(HomeFragment.this);
+            IL1.OnBindInfo(mTitleUserIcon,mypost.getUser());
+            IL1.setIcon();
             mDateTextView.setText(thisdate.toString().replaceAll("\\.0",""));
             mCommentButton.setText(Integer.toString(mypost.getCommentNum()));
             mTranspostButton.setText(Integer.toString(mypost.getTransportNum()));
@@ -437,6 +442,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Popu
 
                 this.transportDate.setText(thisdate1.toString().replaceAll("\\.0",""));
                 this.transportBody.setText(transportPost.getBody());
+                IconLoader IL2 = new IconLoader(HomeFragment.this);
+                IL2.OnBindInfo(this.transportIcon,transportPost.getUser());
+                IL2.setIcon();
                 //配置转发RV
                 LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(getActivity());
                 linearLayoutManager1.setOrientation(LinearLayoutManager.HORIZONTAL);
